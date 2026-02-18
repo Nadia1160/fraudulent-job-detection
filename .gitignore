@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+myenv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# Kaggle data
+/kaggle/
+input/
+/kaggle/input/
+
+# Data files
+*.csv
+*.pkl
+*.joblib
+!models/best_model.pkl
+!models/*vectorizer.pkl
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+data/raw/
+data/processed/
+results/figures/
+models/*.pkl
+!models/.gitkeep
+
+# Keep empty directories
+*.log
+*.out
+*.pid.DS_Store 
