@@ -17,4 +17,4 @@ from src.prediction import FraudJobDetector
 
 detector = FraudJobDetector('models/best_model.pkl')
 result = detector.predict(job_posting)
-print(f"Prediction: {result['type']}")
+print(f"Prediction: {result['type']}") 
