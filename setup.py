@@ -14,7 +14,7 @@ setup(
     description="ML system for detecting fraudulent job postings using NLP",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/YOUR_USERNAME/fraudulent-job-detection",
+    url="https://github.com/Nadia1160/fraudulent-job-detection",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
