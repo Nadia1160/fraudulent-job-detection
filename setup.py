@@ -3,25 +3,26 @@
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-with open("requirements.txt", "r", encoding="utf-8") as fh:
-    requirements = fh.read().splitlines()
+with open("requirements.txt", "r", encoding="utf-8") as f:
+    requirements = f.read().splitlines()
 
 setup(
-    name="fraudulent-job-detection",
+    name="fake-jobs-detection",
     version="1.0.0",
-    author="Nadia Khalid",
-    author_email="nadiakhalid9900@gmail.com",
-    description="ML system for detecting fraudulent job postings using NLP",
+    author="Your Name",
+    author_email="your.email@example.com",
+    description="A Machine Learning Approach to Detecting Fraudulent Job Types",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/YOUR_USERNAME/fraudulent-job-detection",
-    packages=find_packages(),
+    url="https://github.com/Nadia1160/fake-jobs-detection",
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Intended Audience :: Science/Research",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
+        "Topic :: Security",
     ],
     python_requires=">=3.8",
     install_requires=requirements,
