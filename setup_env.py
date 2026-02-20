@@ -14,7 +14,7 @@ setup(
     description="A Machine Learning Approach to Detecting Fraudulent Job Types",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Nadia1160/fake-jobs-detection",
+    url="https://github.com/Nadia1160/fraudulent-job-detection",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     classifiers=[

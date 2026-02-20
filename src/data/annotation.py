@@ -98,11 +98,20 @@ def annotate_fraudulent_types_emscad(df):
         for pattern in type3_patterns:
             scores['type3'] += len(re.findall(pattern, text, re.IGNORECASE))
 
-        # Convert dict_values to list to avoid type checking issues
-        max_score = max(list(scores.values()))
+        # FIX 1: Convert dict_values to list to avoid type checking issues
+        score_values = list(scores.values())
+        max_score = max(score_values)
 
         if max_score > 0:
-            max_type = max(scores, key=scores.get)
+            # FIX 2: Get the key with max value using a custom approach
+            # Instead of using max with key parameter, find it manually
+            max_type = None
+            max_val = -1
+            for key, val in scores.items():
+                if val > max_val:
+                    max_val = val
+                    max_type = key
+            
             if max_type == 'type1':
                 df.loc[idx, 'type'] = 1
                 annotation_stats['type1'] += 1
