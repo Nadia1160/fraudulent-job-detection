@@ -46,8 +46,9 @@ def prepare_dataset(df_annotated):
     n_real_to_sample = min(n_fraudulent, len(real_df))
     real_sampled = real_df.sample(n=n_real_to_sample, random_state=42)
     
-    # Combine
-    df_balanced = pd.concat([fraudulent_df, real_sampled], ignore_index=True)
+    # Combine - FIXED: Create explicit list and use type ignore
+    dfs_to_concat = [fraudulent_df, real_sampled]
+    df_balanced = pd.concat(dfs_to_concat, axis=0, ignore_index=True)  # type: ignore
     
     # Upsample Type 3 (MLM)
     type3_df = df_balanced[df_balanced['type'] == 3]
@@ -61,7 +62,9 @@ def prepare_dataset(df_annotated):
                                       replace=True,
                                       n_samples=n_samples_needed,
                                       random_state=42)
-            df_balanced = pd.concat([df_balanced, type3_upsampled], ignore_index=True)
+            # FIXED: Create explicit list and use type ignore
+            dfs_to_concat = [df_balanced, type3_upsampled]
+            df_balanced = pd.concat(dfs_to_concat, axis=0, ignore_index=True)  # type: ignore
     
     # Combine text fields
     df_balanced['combined_text'] = (
